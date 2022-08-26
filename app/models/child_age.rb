@@ -1,0 +1,2 @@
+class ChildAge < ApplicationRecord
+end
