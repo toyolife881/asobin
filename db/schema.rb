@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 2022_08_26_003831) do
 
   create_table "user_child_ages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.bigint "child_age_id", null: false
+    t.bigint "child_age_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["child_age_id"], name: "index_user_child_ages_on_child_age_id"
@@ -47,7 +47,6 @@ ActiveRecord::Schema.define(version: 2022_08_26_003831) do
     t.string "last_name_kana", null: false
     t.string "first_name_kana", null: false
     t.date "birth_day", null: false
-    t.integer "child_age_id"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

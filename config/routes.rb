@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: {
-    # /app/controllers/users配下の、registrations_controller.rbが参照される
-    registrations: 'users/registrations'
-  }
+  devise_for :users
   root to: 'plays#index'
   resources :plays, only: :index
 end

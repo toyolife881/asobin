@@ -92,20 +92,14 @@
   <div class="form-group">
    <div class='form-text-wrap'>
     <label class="form-text">お子様の年齢</label>
-    <span class="indispensable">必須</span>
+    <%# <span class="indispensable">必須</span> %>
    </div>
    <div class='input-child-age-wrap'>
-    <%# <%= f.collection_check_boxes(:child_age_ids, ChildAge.all, :id, :name) do |child_age| %>
-     <%# <%= child_age.check_box %>  
-     <%# <%= child_age.text %>  
-    <%# <% end %>  
-        <%# <% %w(ステーキ ハンバーグ 寿司 オムライス).each.with_index do |food,i| %>
-    <%# <label> %>
-      <%# <%= f.check_box  :food, {multiple: true}, food, nil %> 
-      <%# <%= food %> 
-    <%# </label> %>
-    <%# <% end %> 
+    <%= f.collection_check_boxes(:child_age_ids, ChildAge.all, :id, :name) do |c| %>
+     <%= c.label { c.check_box + c.text } %>
+    <% end %>  
    </div>
+  
   </div>
 
 

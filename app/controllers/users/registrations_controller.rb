@@ -7,8 +7,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # GET /resource/sign_up
   def new
     super
-    # @user = User.new
-    # @child_ages = ChildAge.all
   end
 
   # POST /resource
