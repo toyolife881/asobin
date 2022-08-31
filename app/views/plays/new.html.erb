@@ -1,0 +1,96 @@
+<div class="plays-post-contents">
+
+ <header class="plays-post-header">
+  <%= link_to image_tag('asobin_logo.png', size: '185x50'), "/" %>
+ </header>
+
+ <div class="plays-post-main">
+  <h2 class="plays-post-title">遊びネタの情報を入力</h2>
+  <%= form_with model: @play, url: plays_path ,method: :post, local: true do |f| %>
+
+   <%# エラーメッセージ %>
+   <%= render 'shared/error_messages' , model: f.object %>
+   <%# エラーメッセージ %>
+
+   <%# 遊びネタ画像 %>
+   <div class="img-upload">
+    <div class="weight-bold-text">
+     メイン画像
+     <%# <span class="indispensable">必須</span> %>
+    </div>
+    <div class="click-upload">
+     <p>クリックしてファイルをアップロード<p>
+    </div>
+   </div>
+   <%# 遊びネタ画像 %>
+
+   <%# 遊び名、事前に必要なもの、遊び方%>
+   <div class="new-plays">
+    <div class="weight-bold-text">
+     遊び名
+     <span class="indispensable">必須</span>
+    </div>
+    <%= f.text_area :play_name, class:"plays-text", id:"play-name", placeholder:"遊び名 (必須 40文字まで)", maxlength:"40" %>
+    <div class="plays-preparation">
+     <div class="weight-bold-text">
+     事前に必要なもの
+     <%# <span class="indispensable">必須</span> %>
+     </div>
+     <%= f.text_area :preparation, class:"plays-text", id:"preparation", placeholder:"事前に必要なもの (1,000文字まで)", maxlength:"1000" %>
+    </div>
+     <div class="plays-how">
+     <div class="weight-bold-text">
+     遊び方
+     <span class="indispensable">必須</span>
+     </div>
+     <%= f.text_area :how_to_play, class:"plays-text", id:"how_to_play", placeholder:"遊び方 (5,000文字まで)", maxlength:"5000" %>
+    </div>
+   </div>
+   <%# 遊び名、事前に必要なもの、遊び方 %>
+
+   <%# プルダウン項目 %>
+   <div class="plays-pull_down">
+    <div class="form">
+     <%# カテゴリー %>
+     <div class="weight-bold-text">
+     カテゴリー
+     <span class="indispensable">必須</span>
+     </div>
+     <%= f.collection_select(:play_category_id, PlayCategory.all, :id, :name, {}, {class:"select-box", id:"play-category"}) %>
+     <%# 対象年齢 %>
+     <div class="weight-bold-text">
+     対象年齢
+     <span class="indispensable">必須</span>
+     </div>
+     <%= f.collection_select(:target_age_id, TargetAge.all, :id, :name, {}, {class:"select-box", id:"target_age"}) %>
+     <%# 目安時間 %>
+     <div class="weight-bold-text">
+     目安時間
+     </div>
+     <%= f.collection_select(:estimated_time_id, EstimatedTime.all, :id, :name, {}, {class:"select-box", id:"estimated_time"}) %>
+    </div>
+   </div>
+   <%# プルダウン項目 %>
+
+   <%# 下部ボタン %>
+   <div class="plays-post-contents">
+    <%= f.submit "投稿する", class:"post-btn" %>
+    <%= link_to 'もどる', root_path, class:"back-btn" %>
+   </div>
+   <%# 下部ボタン %>
+
+  <% end %>
+ </div>
+
+ <footer class="plays-post-footer">
+  <ul class="menu">
+   <li><a href="#">プライバシーポリシー</a></li>
+   <li><a href="#">ASOBIN利用規約</a></li>
+  </ul>
+  <%= link_to image_tag('asobin_logo.png' , size: '185x50'), "/" %>
+  <p class="inc">
+   ©︎ASOBIN,Inc.
+  </p>
+ </footer>
+
+</div>
