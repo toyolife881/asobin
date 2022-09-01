@@ -7,7 +7,7 @@ class CreatePlays < ActiveRecord::Migration[6.0]
       t.integer       :play_category_id,     null: false
       t.integer       :target_age_id,        null: false
       t.integer       :estimated_time_id
-      # t.references    :user,                 null: false, foreign_key: true
+      t.references    :user,                 null: false, foreign_key: true
       t.timestamps
     end
   end
