@@ -1,4 +1,6 @@
 class PlaysController < ApplicationController
+  before_action :authenticate_user!, only: :new
+
   def index
     @plays = Play.all.order('created_at DESC')
   end
