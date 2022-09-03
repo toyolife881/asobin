@@ -139,6 +139,8 @@ a {
 
 .play-contents>.title {
   font-size: 5vh;
+  line-height: 1.4;
+  font-weight: bold;
 }
 
 .play-contents>.subtitle {
@@ -149,14 +151,14 @@ a {
   font-weight: bold;
 }
 
-.play-lisets {
+.play-lists {
   width: 100vw;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-.item-lists>.list {
+.play-lists>.list {
   width: 37vh;
   padding: 1vw;
   background-color: #FFF;

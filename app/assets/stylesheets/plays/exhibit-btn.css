@@ -1,4 +1,4 @@
-.purchase-btn {
+.post-btn_new {
   width: 120px;
   background: #3ccace;
   text-align: center;
@@ -9,7 +9,7 @@
   padding: 15px;
 }
 
-.purchase-btn-text {
+.post-btn-text {
   color: #fff;
   display: block;
   font-size: 18px;
@@ -17,6 +17,6 @@
   margin-bottom: 5px;
 }
 
-.purchase-btn-icon {
+.post-btn-icon {
   width: 60%;
 }
