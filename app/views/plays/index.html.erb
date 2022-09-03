@@ -103,7 +103,7 @@
             <%= play.play_name %>
           </h3>
           <div class='play-how'>
-            <% "遊び詳細" %>
+            <%= play.how_to_play.truncate(50) %>
             <div class='star-btn'>
               <%= image_tag "star.png", class:"star-icon" %>
               <span class='star-count'>0</span>
