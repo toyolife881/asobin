@@ -1,6 +1,6 @@
 class PlaysController < ApplicationController
   before_action :authenticate_user!, only: :new
-  before_action :find_params, only: :show
+  before_action :find_params, only: [:show, :edit]
 
   def index
     @plays = Play.all.order('created_at DESC')
@@ -21,6 +21,14 @@ class PlaysController < ApplicationController
 
   def show
     
+  end
+
+  def edit
+
+  end
+
+  def update
+
   end
 
   private
