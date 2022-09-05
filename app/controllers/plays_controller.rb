@@ -1,6 +1,6 @@
 class PlaysController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :edit]
-  before_action :find_params, only: [:show, :edit, :update]
+  before_action :authenticate_user!, only: [:new, :edit, :destroy]
+  before_action :find_params, only: [:show, :edit, :update, :destroy]
 
   def index
     @plays = Play.all.order('created_at DESC')
@@ -35,6 +35,13 @@ class PlaysController < ApplicationController
       redirect_to play_path(@play)
     else
       render :edit
+    end
+  end
+
+  def destroy
+    if current_user.id == @play.user_id
+     @play.destroy
+     redirect_to root_path
     end
   end
 

@@ -17,7 +17,7 @@
    <%# </div> %>
    <% if current_user.id == @play.user_id %>
     <%= link_to "遊びネタの編集", edit_play_path(@play.id), class:"play-red-btn" %>
-    <%= link_to "削除", "#", class:"play-destroy" %>
+    <%= link_to "削除", play_path(@play.id), method: :delete, class:"play-destroy" %>
    <% else %>
    <% end %>
   <% else %>
