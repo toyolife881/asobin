@@ -32,6 +32,7 @@
      <span class="indispensable">必須</span>
     </div>
     <%= f.text_area :play_name, class:"plays-text", id:"play-name", placeholder:"遊び名 (必須 40文字まで)", maxlength:"40" %>
+    
     <div class="plays-preparation">
      <div class="weight-bold-text">
      事前に必要なもの
@@ -39,7 +40,8 @@
      </div>
      <%= f.text_area :preparation, class:"plays-text", id:"preparation", placeholder:"事前に必要なもの (1,000文字まで)", maxlength:"1000" %>
     </div>
-     <div class="plays-how">
+    
+    <div class="plays-how">
      <div class="weight-bold-text">
      遊び方
      <span class="indispensable">必須</span>
