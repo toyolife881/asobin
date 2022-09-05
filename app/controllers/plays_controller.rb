@@ -18,6 +18,10 @@ class PlaysController < ApplicationController
     end
   end
 
+  def show
+    @play = Play.find(params[:id])
+  end
+
   private
 
   def play_params
