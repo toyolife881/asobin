@@ -94,7 +94,7 @@
       <% if @plays.present? %>
       <% @plays.each do |play|%>
        <li class='list'>
-        <%= link_to '#' do %>
+        <%= link_to play_path(play.id) do %>
         <div class='play-img-content'>
           <%= image_tag play.image, class: "play-img" %>
         </div>

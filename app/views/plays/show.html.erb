@@ -1,0 +1,75 @@
+<%= render "shared/header" %>
+
+<div class="play-show">
+
+ <div class="play-box">
+
+  <h2 class="name">
+   <%= @play.play_name%>
+  </h2>
+  <div class="play-img-content">
+   <%= image_tag @play.image, class:"play-box-img" %>
+  </div>
+
+  <% if user_signed_in? %>
+   <%# <div class="play-do-box"> %>
+    <%= link_to "遊ぶ!!", "#", class:"play-do-btn" %>
+   <%# </div> %>
+   <% if current_user.id == @play.user_id %>
+    <%= link_to "遊びネタの編集", "#", class:"play-red-btn" %>
+    <%= link_to "削除", "#", class:"play-destroy" %>
+   <% else %>
+   <% end %>
+  <% else %>
+  <% end %>
+
+  <table class="detail-table">
+   <tbody>
+    <tr>
+     <th class="detail-play">投稿者</th>
+     <td class="detail-value"><%= @play.user.nickname %></td>
+    </tr>
+    <tr>
+     <th class="detail-play">事前に必要なもの</th>
+     <td class="detail-value"><%= @play.preparation %></td>
+    </tr>
+    <tr>
+     <th class="detail-play">遊び方</th>
+     <td class="detail-value"><%= @play.how_to_play %></td>
+    </tr>
+    <tr>
+     <th class="detail-play">カテゴリー</th>
+     <td class="detail-value"><%= PlayCategory.find(@play.play_category_id).name %></td>
+    </tr>
+    <tr>
+     <th class="detail-play">対象年齢</th>
+     <td class="detail-value"><%= TargetAge.find(@play.play_category_id).name %></td>
+    </tr>
+    <tr>
+     <th class="detail-play">目安時間</th>
+     <td class="detail-value"><%= EstimatedTime.find(@play.play_category_id).name %></td>
+    </tr>
+   </tbody>
+  </table>
+
+  <div class="option">
+   <div class="favorite-btn">
+    <%= image_tag "star.png", class:"favorite-star-icon", width:"20", height:"20" %>
+    <span>お気に入り 0</span>
+   </div>
+  </div>
+
+ </div>
+
+ <div class="links">
+  <a href="#" class="change-play-btn">
+   ＜ 前の遊び
+  </a>
+  <a href="#" class="change-play-btn">
+   後ろの遊び ＞
+  </a>
+ </div>
+
+</div>
+
+<%= render "shared/footer" %>
