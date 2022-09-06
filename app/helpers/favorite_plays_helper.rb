@@ -1,0 +1,2 @@
+module FavoritePlaysHelper
+end

@@ -27,4 +27,9 @@ class User < ApplicationRecord
   validates :last_name_kana, presence: true, format: { with: KANA_REGEX }
   validates :first_name_kana, presence: true, format: { with: KANA_REGEX }
 
+  # favorite_playテーブルにplay_idが存在しているかを確認
+  def favorite_find(play_id)
+    favorite_play.where(play_id: play_id).exists?
+  end
+
 end
