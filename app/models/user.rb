@@ -6,7 +6,9 @@ class User < ApplicationRecord
 
   has_many :user_child_ages
   has_many :child_ages, through: :user_child_ages
-
+  
+  has_many :play
+  has_many :favorite_play
 
   validates :nickname, presence:  true
   validates :birth_day, presence: true
