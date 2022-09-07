@@ -53,10 +53,16 @@
   </table>
 
   <div class="option">
+   <% if user_signed_in? && current_user.id != @play.user_id %>
    <div class="favorite-btn">
     <%= image_tag "star.png", class:"favorite-star-icon", width:"20", height:"20" %>
-    <span>お気に入り 0</span>
+    <% if current_user.favorite_find(@play.id) %>
+     <%= link_to 'お気に入りから外す', play_favorite_play_path(@play.id), method: :delete %>
+    <% else %>
+     <%= link_to 'お気に入り登録する', play_favorite_plays_path(@play.id), method: :post %>
+    <% end %>
    </div>
+   <% end %>
   </div>
 
  </div>

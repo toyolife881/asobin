@@ -6,7 +6,9 @@ class User < ApplicationRecord
 
   has_many :user_child_ages
   has_many :child_ages, through: :user_child_ages
-
+  
+  has_many :play
+  has_many :favorite_play
 
   validates :nickname, presence:  true
   validates :birth_day, presence: true
@@ -24,5 +26,10 @@ class User < ApplicationRecord
   KANA_REGEX = /\A[ァ-ヶー]+\z/.freeze
   validates :last_name_kana, presence: true, format: { with: KANA_REGEX }
   validates :first_name_kana, presence: true, format: { with: KANA_REGEX }
+
+  # favorite_playテーブルにplay_idが存在しているかを確認
+  def favorite_find(play_id)
+    favorite_play.where(play_id: play_id).exists?
+  end
 
 end
