@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'users/show'
   get 'favorite_plays/create'
   get 'favorite_plays/destroy'
   devise_for :users
