@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   resources :plays do
     resources :favorite_plays, only: [:create, :destroy]
   end
+  resources :users, only: :show
 end
