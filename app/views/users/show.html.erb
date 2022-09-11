@@ -1,2 +1,106 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<%= render "shared/header" %>
+
+<div class="user-show">
+
+ <div class="user-box">
+
+  <div class="user-info">
+   <h2>ユーザー情報</h2>
+   <table class="detail-user-table">
+    <tbody>
+     <tr>
+      <th class="detail-user">ニックネーム</th>
+      <td class="detail-user-value"><%= @user.nickname %></td>
+     </tr>
+     <tr>
+      <th class="detail-user">メールアドレス</th>
+      <td class="detail-user-value"><%= @user.email %></td>
+     </tr>
+     <tr>
+      <th class="detail-user">お名前</th>
+      <td class="detail-user-value"><%= @user.last_name %><%= @user.first_name %></td>
+     </tr>
+     <tr>
+      <th class="detail-user">お名前(カナ)</th>
+      <td class="detail-user-value"><%= @user.last_name_kana %><%= @user.first_name_kana %></td>
+     </tr>
+     <tr>
+      <th class="detail-user">生年月日</th>
+      <td class="detail-user-value"><%= @user.birth_day %></td>
+     </tr>
+     <tr>
+      <th class="detail-user">お子様の年齢</th>
+      <td class="detail-user-value">
+       <% @child_ages.each do |child_age| %>
+        <%= ChildAge.find(child_age.child_age_id).name %>
+       <% end %>
+      </td>
+     </tr>
+    </tbody>
+   </table>
+  </div>
+
+  <%# 自分の投稿 %>
+  <div class="user-post-plays">
+   <h2>自分の投稿</h2>
+   <ul class="play-lists">
+    <% @plays.each do |play| %>
+    <li class="list">
+     <%= link_to play_path(play.id) do %>
+     <div class="play-img-content">
+     <%= image_tag play.image, class:"play-img" %>
+     </div>
+     <div class='play-info'>
+          <h3 class='play-name'>
+            <%= play.play_name %>
+          </h3>
+          <div class='play-how'>
+            <%= play.how_to_play.truncate(50) %>
+          </div>
+     </div>
+     <% end %>
+    </li>
+    <% end %>
+   </ul>
+  </div>
+  <%# 自分の投稿 %>
+
+  <%# お気に入り %>
+  <div class="user-favorite-plays">
+   <h2>お気に入り</h2>
+   <ul class="play-lists">
+    <% @favorite_plays.each do |favorite_play| %>
+    <li class="list">
+     <%= link_to play_path(favorite_play.play_id) do %>
+     <div class='play-img-content'>
+      <%= image_tag Play.find(favorite_play.play_id).image, class: "play-img" %>
+     </div> 
+     <div class='play-info'>
+          <h3 class='play-name'>
+            <%= Play.find(favorite_play.play_id).play_name %>
+          </h3>
+          <div clas='play-how'>
+           <%= Play.find(favorite_play.play_id).how_to_play.truncate(50) %>
+          </div>
+     </div>
+     <% end %>
+    </li>
+    <% end %>
+   </ul>
+  </div>
+  <%# お気に入り %>
+
+  <%# 実績 %>
+  <div class="user-favorite-plays">
+  <h2>実績</h2>
+  </div>
+  <%# 実績 %>
+
+
+  
+
+ </div>
+
+</div>
+
+<%= render "shared/footer" %>

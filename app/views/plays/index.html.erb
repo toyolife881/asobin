@@ -92,27 +92,23 @@
     <ul class='play-lists'>
 
       <% if @plays.present? %>
-      <% @plays.each do |play|%>
-       <li class='list'>
-        <%= link_to play_path(play.id) do %>
-        <div class='play-img-content'>
+       <% @plays.each do |play|%>
+        <li class='list'>
+         <%= link_to play_path(play.id) do %>
+         <div class='play-img-content'>
           <%= image_tag play.image, class: "play-img" %>
-        </div>
-        <div class='play-info'>
+         </div>
+         <div class='play-info'>
           <h3 class='play-name'>
-            <%= play.play_name %>
+           <%= play.play_name %>
           </h3>
           <div class='play-how'>
-            <%= play.how_to_play.truncate(50) %>
-            <%# <div class='star-btn'> %>
-              <%# <%= image_tag "star.png", class:"star-icon" %>
-              <%# <span class='star-count'>0</span> %>
-            <%# </div> %>
+           <%= play.how_to_play.truncate(50) %>
           </div>
-        </div>
-        <% end %>
-       </li>
-      <% end %>
+         </div>
+         <% end %>
+        </li>
+       <% end %>
       
 
       
