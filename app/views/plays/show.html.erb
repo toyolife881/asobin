@@ -43,11 +43,11 @@
     </tr>
     <tr>
      <th class="detail-play">対象年齢</th>
-     <td class="detail-value"><%= TargetAge.find(@play.play_category_id).name %></td>
+     <td class="detail-value"><%= TargetAge.find(@play.target_age_id).name %></td>
     </tr>
     <tr>
      <th class="detail-play">目安時間</th>
-     <td class="detail-value"><%= EstimatedTime.find(@play.play_category_id).name %></td>
+     <td class="detail-value"><%= EstimatedTime.find(@play.estimated_time_id).name %></td>
     </tr>
    </tbody>
   </table>

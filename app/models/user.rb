@@ -7,8 +7,8 @@ class User < ApplicationRecord
   has_many :user_child_ages
   has_many :child_ages, through: :user_child_ages
   
-  has_many :play
-  has_many :favorite_play
+  has_many :plays
+  has_many :favorite_plays
 
   validates :nickname, presence:  true
   validates :birth_day, presence: true
@@ -29,7 +29,7 @@ class User < ApplicationRecord
 
   # favorite_playテーブルに引数play_idが存在しているかを確認
   def favorite_find(play_id)
-    favorite_play.where(play_id: play_id).exists?
+    favorite_plays.where(play_id: play_id).exists?
   end
 
 end
