@@ -13,7 +13,7 @@
 
   <% if user_signed_in? %>
    <%# <div class="play-do-box"> %>
-    <%= link_to "遊ぶ!!", "#", class:"play-do-btn" %>
+    <%= link_to "遊ぶ!!", play_achivement_plays_path(@play.id), method: :post, class:"play-do-btn" %>
    <%# </div> %>
    <% if current_user.id == @play.user_id %>
     <%= link_to "遊びネタの編集", edit_play_path(@play.id), class:"play-red-btn" %>
@@ -43,11 +43,11 @@
     </tr>
     <tr>
      <th class="detail-play">対象年齢</th>
-     <td class="detail-value"><%= TargetAge.find(@play.play_category_id).name %></td>
+     <td class="detail-value"><%= TargetAge.find(@play.target_age_id).name %></td>
     </tr>
     <tr>
      <th class="detail-play">目安時間</th>
-     <td class="detail-value"><%= EstimatedTime.find(@play.play_category_id).name %></td>
+     <td class="detail-value"><%= EstimatedTime.find(@play.estimated_time_id).name %></td>
     </tr>
    </tbody>
   </table>

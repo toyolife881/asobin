@@ -1,7 +1,8 @@
 class Play < ApplicationRecord
 
 belongs_to :user
-has_many :favorite_play
+has_many :favorite_plays
+has_many :achivement_plays
 
 extend ActiveHash::Associations::ActiveRecordExtensions
 belongs_to :play_category
