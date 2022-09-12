@@ -1,0 +1,2 @@
+class AchivementPlay < ApplicationRecord
+end
