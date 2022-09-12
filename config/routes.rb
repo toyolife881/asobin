@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   root to: 'plays#index'
   resources :plays do
     resources :favorite_plays, only: [:create, :destroy]
+    resources :achivement_plays, only: [:create]
   end
   resources :users, only: :show
 end
