@@ -15,3 +15,6 @@ ja:
         play_category_id: カテゴリー
         target_age_id: 対象年齢
         user: ユーザー名
+  time:
+    formats:
+      default: "%Y/%m/%d %H:%M:%S"

@@ -113,7 +113,7 @@
     <li clas="list">
      <%= link_to play_path(achivement_play.play_id) do %>
      <div class="play-day">
-      <%= achivement_play.created_at %>
+      <%= l achivement_play.created_at %>
       <%= Play.find(achivement_play.play_id).play_name %>
      </div>
      <% end %>

@@ -17,9 +17,14 @@ module Asobin
     # loggerの設定
     config.logger = ActiveSupport::Logger.new(STDOUT)
 
+    
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
+
+    # 日本時刻の設定
+    config.time_zone = 'Tokyo'
   end
 end
