@@ -34,8 +34,8 @@
      <tr>
       <th class="detail-user">お子様の年齢</th>
       <td class="detail-user-value">
-       <% @child_ages.each do |child_age| %>
-        <%= ChildAge.find(child_age.child_age_id).name %>
+       <% @user_child_ages.each do |user_child_age| %>
+        <%= ChildAge.find(user_child_age.child_age_id).name %>
        <% end %>
       </td>
      </tr>
@@ -94,9 +94,72 @@
   <%# お気に入り %>
 
   <%# 実績 %>
-  <div class="user-favorite-plays">
-  <h2>実績</h2>
+  <div class="user-achivement-plays">
+   <h2>実績</h2>
+   <div>
+   遊んだ回数
+   <%= @plays_count %>
+   </div>
+   <div>
+   9月の実績
+   <%= @month_record[Date.today.month] %>
+   </div>
+   <div>
+   10月の実績
+   <%= @month_record[Date.today.month + 1] %>
+   </div>
+   <ul class="play-lists">
+    <% @achivement_plays.each do |achivement_play|%>
+    <li clas="list">
+     <%= link_to play_path(achivement_play.play_id) do %>
+     <div class="play-day">
+      <%= l achivement_play.created_at %>
+      <%= Play.find(achivement_play.play_id).play_name %>
+     </div>
+     <% end %>
+    </li>
+    <% end %>
+   </ul>
+
+   <div>
+    <h2>グラフ</h2>
+    <%= column_chart @month_record, xtitle: "月", ytitle: "回数" %>
+   </div>
   </div>
+
+  <div>
+   <canvas id="myChart"></canvas>
+    <script>
+     var ctx = document.getElementById("myChart");
+     var myChart = new Chart(ctx, {
+      type: 'radar',
+      data: {
+       labels: ["外遊び", "室内遊び", "制作", "音楽", "本", "TVゲーム", "スポーツ", "料理", "その他"],
+       datasets: 
+       [
+         {
+           label: 'カテゴリー別遊び回数',
+           backgroundColor: 'rgba(102,255,129,0.2)',
+           borderColor: 'rgba(122,255,129,0.2)',
+           data: [<%= @play_categorys_count[2] %>, <%= @play_categorys_count[3] %>, <%= @play_categorys_count[4] %>, 
+           <%= @play_categorys_count[5] %>, <%= @play_categorys_count[6] %>, <%= @play_categorys_count[7] %>, 
+           <%= @play_categorys_count[8] %>,<%= @play_categorys_count[9] %>, <%= @play_categorys_count[10] %>]
+         }
+       ]
+       },
+     options: {
+      scale: {
+          ticks: {
+              suggestedMin: 0,
+              suggestedMax: 10
+          }
+      }
+     }
+    });
+   </script>
+</div>
+
+
   <%# 実績 %>
 
 
