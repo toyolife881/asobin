@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     @favorite_plays = @user.favorite_plays
     @achivement_plays = @user.achivement_plays
     @plays_count = AchivementPlay.where(user_id: @user.id).count
-    @month_record = @user.achivement_plays.group("MONTH(created_at)").count
+    @month_record = @user.achivement_plays.group("YEAR(created_at)").group("MONTH(created_at)").count
     else
       redirect_to root_path
     end
