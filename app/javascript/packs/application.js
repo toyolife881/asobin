@@ -6,6 +6,8 @@
 require("@rails/ujs").start()
 require("@rails/activestorage").start()
 require("channels")
+require("../tab")
+require('jquery')
 
 import "chartkick/chart.js"
 

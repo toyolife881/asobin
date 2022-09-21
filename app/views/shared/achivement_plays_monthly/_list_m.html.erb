@@ -1,0 +1,12 @@
+<ul class="play-lists">
+ <% @achivement_plays_month.each do |achivement_play_month|%>
+ <li clas="list">
+  <%= link_to play_path(achivement_play_month.play_id) do %>
+  <div class="play-day">
+   <%= l achivement_play_month.created_at %>
+   <%= Play.find(achivement_play_month.play_id).play_name %>
+  </div>
+  <% end %>
+ </li>
+ <% end %>
+</ul>
