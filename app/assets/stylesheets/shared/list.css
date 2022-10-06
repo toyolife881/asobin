@@ -14,7 +14,7 @@
 }
 
 .play-monthly:hover {
-  background-color: rgb(127,218,88,0.5);
+  background-color: rgba(127,218,88,0.5);
 }
 
 .play-monthly-created, .play-monthly-name {
