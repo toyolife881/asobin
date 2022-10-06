@@ -11,7 +11,7 @@ class User < ApplicationRecord
   has_many :favorite_plays
   has_many :achivement_plays
 
-  validates :nickname, presence:  true
+  validates :nickname, presence: true
   validates :birth_day, presence: true
 
   # 半角英数字混合でなければ保存できない

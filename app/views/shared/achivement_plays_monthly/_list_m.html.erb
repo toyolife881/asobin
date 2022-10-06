@@ -1,12 +1,35 @@
-<ul class="play-lists">
+<ul class="play-lists-monthly">
  <% @achivement_plays_month.each do |achivement_play_month|%>
- <li clas="list">
+ <li clas="list-monthly">
   <%= link_to play_path(achivement_play_month.play_id) do %>
-  <div class="play-day">
+  <div class="play-monthly">
+   <div class="play-monthly-created">
    <%= l achivement_play_month.created_at %>
+   </div>
+   <div class="play-monthly-name">
    <%= Play.find(achivement_play_month.play_id).play_name %>
+   </div>
   </div>
   <% end %>
  </li>
  <% end %>
 </ul>
+
+<div class="play-counts">
+ <div class="play-count-monthely">
+  <div class="count-title">
+   This month
+  </div>
+  <div class="count-value">
+   <%= @achivement_plays_month.count %>
+  </div> 
+ </div>
+  <div class="play-count-ttl">
+  <div class="count-title">
+   Total
+  </div>
+  <div class="count-value">
+   <%= @plays_count %>
+  </div>
+ </div>
+</div>
