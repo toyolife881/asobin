@@ -1,17 +1,11 @@
 .user-box {
   width: 100%;
-  /* padding: 10vh 15vw; */
 }
 
 /* ユーザー情報 */
 .user-info {
   padding: 20vh 0 10vh 0;
-  /* margin: 0 auto; */
 }
-
-/* .user-info {
-  border: 3px solid #EEEEEE;
-} */
 
 .user-info-title {
   display: flex;
@@ -70,10 +64,6 @@
   padding: 0 0 10vh 0;
 }
 
-/* .user-post-plays {
-  border: 3px solid #EEEEEE;
-} */
-
 .user-post-title {
   display: flex;
   justify-content: center;
@@ -100,10 +90,6 @@
   padding: 0 0 10vh 0;
 }
 
-/* .user-favorite-plays {
-  border: 3px solid #EEEEEE;
-} */
-
 .user-favorite-title {
   display: flex;
   justify-content: center;
@@ -129,10 +115,6 @@
   width: 100%;
   padding: 0 0 10vh 0;
 }
-
-/* .user-achivement-plays {
-  border: 3px solid #EEEEEE;
-} */
 
 .user-achivement-title {
   display: flex;
