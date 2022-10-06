@@ -1,0 +1,56 @@
+.play-lists-monthly {
+  width: 30vw;
+  margin: 0 auto;
+  padding: 10px 0;
+  margin-bottom: 15px;
+}
+
+.play-monthly {
+  text-align: center;
+  border-bottom: solid 1px #333;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.play-monthly:hover {
+  background-color: rgb(127,218,88,0.5);
+}
+
+.play-monthly-created, .play-monthly-name {
+  font-weight: bold;
+  color: #333;
+}
+
+.play-monthly-created {
+  width: 50%;
+}
+
+.play-monthly-name {
+  width: 50%;
+}
+
+.play-counts {
+  padding: 10px 0;
+  width: 30vw;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-top: 3px solid #eee;
+}
+
+.play-count-monthely {
+  width: 50%;
+  text-align: center;
+}
+
+.play-count-ttl {
+  width: 50%;
+  text-align: center;
+}
+
+.count-value {
+  font-size: 36px;
+  font-weight: bold;
+}

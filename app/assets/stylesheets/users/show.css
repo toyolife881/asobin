@@ -1,8 +1,173 @@
-.tab-area {
-  display: flex;
-  justify-content: space-around;
+.user-box {
+  width: 100%;
+  /* padding: 10vh 15vw; */
 }
 
+/* ユーザー情報 */
+.user-info {
+  padding: 20vh 0 10vh 0;
+  /* margin: 0 auto; */
+}
+
+/* .user-info {
+  border: 3px solid #EEEEEE;
+} */
+
+.user-info-title {
+  display: flex;
+  justify-content: center;
+  font-size: 3.5vh;
+  margin-bottom: 5vh;
+  position: relative;
+}
+
+.user-info-title::after {
+  content: '';
+  width: 100px;
+  height: 4px;
+  background-color: red;
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.user-edit-btn {
+  margin-left: 10px;
+  font-size: 1.5vh;
+  display: flex;
+  align-items: center;
+}
+
+.detail-user-table {
+  width: 60vw;
+  margin-bottom: 30px;
+  margin: 0 auto;
+}
+
+.detail-user-table, .detail-user, .detail-user-value {
+  border: 1px solid #333;
+}
+
+.detail-user {
+  background-color: #EEEEEE;
+  width: 20%;
+  font-size: 14px;
+  text-align: center;
+}
+
+.detail-user-value {
+  width: 80%;
+  padding: 20px;
+  font-size: 14px;
+}
+/* ユーザー情報 */
+
+
+/* 自分の投稿 */
+.user-post-plays {
+  width: 100%;
+  padding: 0 0 10vh 0;
+}
+
+/* .user-post-plays {
+  border: 3px solid #EEEEEE;
+} */
+
+.user-post-title {
+  display: flex;
+  justify-content: center;
+  font-size: 3.5vh;
+  margin-bottom: 5vh;
+  position: relative;
+}
+
+.user-post-title::after {
+  content: '';
+  width: 100px;
+  height: 4px;
+  background-color: red;
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+/* 自分の投稿 */
+
+/* お気に入り */
+.user-favorite-plays {
+  width: 100%;
+  padding: 0 0 10vh 0;
+}
+
+/* .user-favorite-plays {
+  border: 3px solid #EEEEEE;
+} */
+
+.user-favorite-title {
+  display: flex;
+  justify-content: center;
+  font-size: 3.5vh;
+  margin-bottom: 5vh;
+  position: relative;
+}
+
+.user-favorite-title::after {
+  content: '';
+  width: 100px;
+  height: 4px;
+  background-color: red;
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+/* お気に入り */
+
+/* 実績 */
+.user-achivement-plays {
+  width: 100%;
+  padding: 0 0 10vh 0;
+}
+
+/* .user-achivement-plays {
+  border: 3px solid #EEEEEE;
+} */
+
+.user-achivement-title {
+  display: flex;
+  justify-content: center;
+  font-size: 3.5vh;
+  margin-bottom: 5vh;
+  position: relative;
+}
+
+.user-achivement-title::after {
+  content: '';
+  width: 100px;
+  height: 4px;
+  background-color: red;
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+/* 実績 */
+
+/* タブ */
+.tab-and-tabbox-area {
+  width: 80%;
+  border: 3px solid #EEEEEE;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.tab-area {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin: 0 auto;
+}
 
 .tab {
   width: 100%;
@@ -11,18 +176,25 @@
   border-top: solid 1px #CCC;
   border-left: solid 1px #CCC;
   border-bottom: solid 1px #CCC;
+  background-color: #EEEEEE;
 }
 
 .tab-active {
   color: #FFF;
-  background: #19b5d1;
+  background-color: #7FDA58;
   transition: all 0.2s ease-in-out;
+}
+
+.tab-right {
+  border-right: solid 1px #CCC;
 }
 
 .tabbox {
   display: none;
-  padding: 15px;
+  padding: 15px 0;
+  min-height: 30vh;
 }
+
 
 .box-show {
   display: block;
@@ -32,3 +204,26 @@
   box-shadow: 0 4px 7px 0 rgba(0, 0, 0, 0.5);
   transform: translateY(-1px);
 }
+/* タブ */
+
+/* 棒グラフ */
+.column-chart-area {
+  padding: 10px 0;
+  width: 80%;
+  margin: 0 auto;
+  border-right: 3px solid #EEEEEE;
+  border-left: 3px solid #EEEEEE;
+  border-bottom: 3px solid #EEEEEE;
+}
+/* 棒グラフ */
+
+/* レーダーチャート */
+.radar-chart-area {
+  padding: 10px 0;
+  width: 80%;
+  margin: 0 auto;
+  border-right: 3px solid #EEEEEE;
+  border-left: 3px solid #EEEEEE;
+  border-bottom: 3px solid #EEEEEE;
+}
+/* レーダーチャート */

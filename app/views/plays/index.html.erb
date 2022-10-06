@@ -1,6 +1,5 @@
 <%= render "shared/header" %>
 <div class='main'>
-
   <%# 画面上部のASOBIN帯部分 %>
   <div class='title-contents'>
     <h2 class='service-title'>
@@ -12,13 +11,8 @@
     <p class='service-explain'>
       たくさん詰まったアプリです
     </p>
-    <%# <div class='store-btn'> %>
-      <%# <%= link_to image_tag("app-store.svg", class:"apple-btn"), "#" %> 
-      <%# <%= link_to image_tag("google-play.png", class:"google-btn"), "#" %> 
-    <%# </div> %>
   </div>
   <%# /画面上部のASOBIN帯部分  %>
-
   <%# ASOBINの特徴 %>
   <div class='feature-contents'>
     <h2 class='title'>
@@ -26,125 +20,82 @@
     </h2>
     <ul class='feature-lists'>
       <li class='list'>
-        <%= image_tag "pic2.jpg", class:"list-pict" %>
+        <%= image_tag "pic2-b.jpg", class:"list-pict" %>
         <span class='feature-list-number'>1</span>
         <h3 class='feature-list-text'>
-          <span class='feature-list-blue-text'>3分</span>
-          ですぐに出品
+          お子様との遊びに困った時の<span class='feature-list-red-text'>ネタ探し</span>に
         </h3>
         <p class='feature-list-description'>
-          スマホで入力するだけで簡単に出品できる！
+          ユーザーが投稿した遊びネタの閲覧が可能!!<br>
+          もちろん自身での投稿も可能!!
         </p>
       </li>
       <li class='list'>
-        <%= image_tag "pic3.jpg", class:"list-pict" %>
+        <%= image_tag "pic3-b.png", class:"list-pict" %>
         <span class='feature-list-number'>2</span>
         <h3 class='feature-list-text'>
-          <span class='feature-list-blue-text'>シンプル</span>
-          で使いやすい
+          お子様との遊びの<span class='feature-list-red-text'>記録管理</span>に
         </h3>
         <p class='feature-list-description'>
-          めんどくさい入力は必要なく、検索も購入もスムーズ！
-        </p>
-      </li>
-      <li class='list'>
-        <%= image_tag "pic5.jpg", class:"list-pict" %>
-        <span class='feature-list-number'>3</span>
-        <h3 class='feature-list-text'>
-          手数料
-          <span class='feature-list-blue-text'>業界最安</span>
-        </h3>
-        <p class='feature-list-description'>
-          10%でお得に出品&購入！
+          遊んだ記録を月別、カテゴリー別にアーカイブ化!!<br>
+          お子様とどれだけ一緒に遊ぶことができたか可視化可能!!
         </p>
       </li>
     </ul>
   </div>
   <%# ASOBINの特徴 %>
-
-  <%# 画面中央の「会員数日本一位」帯部分 %>
-  <div class='ad-contents'>
-    <h2 class='ad-title'>
-      会員数日本一位
-    </h2>
-    <p class='ad-explain'>
-      FURIMAは、フリマアプリで最も人気。
-    </p>
-    <p class='ad-explain'>
-      出品・購入回数も業界最多です！
-    </p>
-    <p class='ad-explain'>
-      ほしかったあの商品に出会えるかもしれません。
-    </p>
-    <%# <div class='store-btn'> %>
-      <%# <%= link_to image_tag("app-store.svg", class:"apple-btn"), "#" %> 
-      <%# <%= link_to image_tag("google-play.png", class:"google-btn"), "#" %> 
-    <%# </div> %>
-  </div>
-  <%# /画面中央の「会員数日本一位」帯部分 %>
-
   <%# 遊びネタ一覧 %>
   <div class='play-contents'>
-    <h2 class='title'>ピックアップカテゴリー</h2>
-    <div class="subtitle" >
-      新着
-    </div>
+    <h2 class='title'>新着投稿</h2>
     <ul class='play-lists'>
-
       <% if @plays.present? %>
-       <% @plays.each do |play|%>
-        <li class='list'>
-         <%= link_to play_path(play.id) do %>
-         <div class='play-img-content'>
-          <%= image_tag play.image, class: "play-img" %>
-         </div>
-         <div class='play-info'>
-          <h3 class='play-name'>
-           <%= play.play_name %>
-          </h3>
-          <div class='play-how'>
-           <%= play.how_to_play.truncate(50) %>
-          </div>
-         </div>
-         <% end %>
-        </li>
-       <% end %>
-      
-
-      
-      <% else %>
-       <li class='list'>
-        <%= link_to '#' do %>
-        <%= image_tag "pic6.jpg", class: "play-img" %>
-        <div class='play-info'>
-          <h3 class='play-name'>
-            遊びネタを投稿してね！
-          </h3>
-          <div class='play-how'>
-            <% "遊び詳細" %>
-            <div class='star-btn'>
-              <%= image_tag "star.png", class:"star-icon" %>
-              <span class='star-count'>0</span>
-            </div>
-          </div>
-        </div>
+        <% @plays.each do |play|%>
+          <li class='list'>
+            <%= link_to play_path(play.id) do %>
+              <div class='play-img-content'>
+                <%= image_tag play.image, class: "play-img" %>
+              </div>
+              <div class='play-info'>
+                <h3 class='play-name'>
+                  <%= play.play_name %>
+                </h3>
+                <div class='play-how'>
+                  <%= play.how_to_play.truncate(50) %>
+                </div>
+              </div>
+            <% end %>
+          </li>
         <% end %>
-       </li>
+      <% else %>
+        <li class='list'>
+          <%= link_to '#' do %>
+            <%= image_tag "pic6.jpg", class: "play-img" %>
+            <div class='play-info'>
+              <h3 class='play-name'>
+                遊びネタを投稿してね！
+              </h3>
+              <div class='play-how'>
+                <% "遊び詳細" %>
+              </div>
+            </div>
+          <% end %>
+        </li>
       <% end %>
-    
     </ul>
   </div>
   <%# /遊びネタ一覧 %>
 </div>
+<%# 投稿するボタン %>
 <% if user_signed_in? %>
- <%= link_to(new_play_path, class: 'post-btn_new') do %>
-   <span class='post-btn-text'>投稿する</span>
-   <%= image_tag 'post_btn.png' , size: '185x50' ,class: "post-btn-icon" %>
- <% end %>
+  <%= link_to(new_play_path, class: 'post-btn_new') do %>
+    <span class='post-btn-text'>投稿する</span>
+    <%= image_tag 'post_btn.png' , size: '185x50' ,class: "post-btn-icon" %>
+  <% end %>
 <% else %>
- <%= link_to(new_user_session_path, class: 'post-btn_new') do %>
-   <span class='post-btn-text'>投稿する</span>
-   <%= image_tag 'post_btn.png' , size: '185x50' ,class: "post-btn-icon" %>
- <% end %>
+  <%= link_to(new_user_session_path, class: 'post-btn_new') do %>
+    <span class='post-btn-text'>投稿する</span>
+    <%= image_tag 'post_btn.png' , size: '185x50' ,class: "post-btn-icon" %>
+  <% end %>
 <% end %>
+<%# 投稿するボタン %>
 <%= render "shared/footer" %>

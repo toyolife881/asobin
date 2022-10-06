@@ -7,8 +7,9 @@ a {
 }
 
 .title-contents {
+  height: 90vh;
   width: 100vw;
-  background-image: image-url('pic1.jpg');
+  background-image: image-url('pic1-b.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top center;
@@ -44,9 +45,9 @@ a {
 
 .feature-contents>.title::after {
   content: '';
-  width: 70px;
+  width: 100px;
   height: 4px;
-  background-color: #3ccace;
+  background-color: red;
   position: absolute;
   bottom: -10px;
   left: 50%;
@@ -60,7 +61,7 @@ a {
 }
 
 .feature-lists>.list {
-  width: 33vh;
+  width: 64vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -70,6 +71,7 @@ a {
 .list-pict {
   margin-bottom: 20px;
   width: 100%;
+  height: 90%;
 }
 
 .feature-list-number {
@@ -81,7 +83,7 @@ a {
   font-size: 30px;
   text-align: center;
   line-height: 60px;
-  background-color: #3ccace;
+  background-color: #7FDA58;
   color: #fff;
 }
 
@@ -91,8 +93,8 @@ a {
   line-height: 50px;
 }
 
-.feature-list-blue-text {
-  color: #3ccace;
+.feature-list-red-text {
+  color: red;
 }
 
 .feature-list-description {
@@ -100,37 +102,8 @@ a {
   margin-top: 20px;
 }
 
-/* 画面中央の「会員数日本一位」帯部分*/
-.ad-contents {
-  width: 100vw;
-  background-image: image-url('pic1.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: top center;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  padding: 5vh 15vw;
-  color: #fff;
-  text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
-}
-
-.ad-title {
-  font-size: 5vh;
-  margin-bottom: 2vh;
-}
-
-.ad-explain {
-  font-size: 2.5vh;
-  line-height: 30px;
-}
-/* 画面中央の「会員数日本一位」帯部分*/
-
 /* 遊びネタ一覧 */
-
 .play-contents {
-  background-color: #FFF;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -138,17 +111,23 @@ a {
 }
 
 .play-contents>.title {
-  font-size: 5vh;
+  font-size: 3.5vh;
   line-height: 1.4;
   font-weight: bold;
+  text-align: center;
+  margin-bottom: 5vh;
+  position: relative;
 }
 
-.play-contents>.subtitle {
-  font-size: 3vh;
-  margin: 1vh 0;
-  text-decoration: none;
-  color: #3ccace;
-  font-weight: bold;
+.play-contents>.title::after {
+  content: '';
+  width: 100px;
+  height: 4px;
+  background-color: red;
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .play-lists {
@@ -161,7 +140,6 @@ a {
 .play-lists>.list {
   width: 37vh;
   padding: 1vw;
-  background-color: #FFF;
 }
 
 .item-img-content {
@@ -174,7 +152,6 @@ a {
 }
 
 .play-info {
-  background-color: #FFF;
   color: black;
   padding: 1vw;
 }
@@ -188,20 +165,4 @@ a {
   display: flex;
   justify-content: space-between;
 }
-
-.star-btn {
-  display: flex;
-  align-items: center;
-}
-
-.star-icon {
-  height: 2vh;
-  width: 2vh;
-  margin-right: 0.5vw;
-}
-
-.star-count {
-  font-size: 2vh;
-}
-
 /* //遊びネタ一覧 */

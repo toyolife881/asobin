@@ -1,36 +1,9 @@
-/* 下部広告部分 */
-.ad-footer-contents {
-  width: 100vw;
-  background-image: image-url('pic2.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: top center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 5vh 15vw;
-  color: #fff;
-  text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
-}
-
-.ad-footer-title {
-  font-size: 4vh;
-  margin-bottom: 2vh;
-}
-
-.ad-footer-explain {
-  font-size: 3vh;
-  line-height: 30px;
-}
-/* 下部広告部分 */
-
 .footer {
   width: 100vw;
   padding: 5vh 0;;
   color: #fff;
   background-color: #272727;
-  text-align: center;;
+  text-align: center;
 }
 
 .footer-contents {
@@ -55,7 +28,7 @@
   line-height: 30px;
 }
 
-.logo-white {
+.footer-logo {
   width: 20vh;
   vertical-align: bottom;
 }

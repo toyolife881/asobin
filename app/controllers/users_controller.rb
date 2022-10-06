@@ -10,7 +10,7 @@ class UsersController < ApplicationController
     @achivement_plays = @user.achivement_plays
     @plays_count = AchivementPlay.where(user_id: @user.id).count
     @achivement_plays_count = @achivement_plays.joins(:play).group(:play_category_id).count
-    @month_record = @user.achivement_plays.group("YEAR(created_at)").group("MONTH(created_at)").count
+    @month_record = @achivement_plays.where(created_at: Time.now.ago(5.month).beginning_of_month..Time.now.end_of_month).group("YEAR(created_at)").group("MONTH(created_at)").count
     achivement_plays_monthly
     else
       redirect_to root_path
