@@ -48,8 +48,8 @@
   <div class='play-contents'>
     <h2 class='title'>新着投稿</h2>
     <ul class='play-lists'>
-      <% if @plays.present? %>
-        <% @plays.each do |play|%>
+      <% if @plays_limit10.present? %>
+        <% @plays_limit10.each do |play|%>
           <li class='list'>
             <%= link_to play_path(play.id) do %>
               <div class='play-img-content'>
