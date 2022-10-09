@@ -3,7 +3,7 @@ class PlaysController < ApplicationController
   before_action :find_params, only: [:show, :edit, :update, :destroy]
 
   def index
-    @plays = Play.all.order('created_at DESC')
+    @plays_limit10 = Play.all.order('created_at DESC').limit(10)
   end
 
   def new
