@@ -43,7 +43,7 @@
     <div class="user-post-plays">
       <h2 class="user-post-title">自分の投稿</h2>
       <ul class="play-lists">
-        <% @plays.each do |play| %>
+        <% @plays_limit10.each do |play| %>
           <li class="list">
             <%= link_to play_path(play.id) do %>
               <div class="play-img-content">
@@ -67,7 +67,7 @@
     <div class="user-favorite-plays">
       <h2 class="user-favorite-title">お気に入り</h2>
       <ul class="play-lists">
-        <% @favorite_plays.each do |favorite_play| %>
+        <% @favorite_plays_limit10.each do |favorite_play| %>
           <li class="list">
             <%= link_to play_path(favorite_play.play_id) do %>
               <div class='play-img-content'>
