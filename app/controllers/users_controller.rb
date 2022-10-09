@@ -5,8 +5,8 @@ class UsersController < ApplicationController
   def show
     if current_user.id == @user.id
     @user_child_ages = @user.user_child_ages
-    @plays = @user.plays
-    @favorite_plays = @user.favorite_plays
+    @plays_limit10 = @user.plays.all.order('created_at DESC').limit(10)    
+    @favorite_plays_limit10 = @user.favorite_plays.all.order('created_at DESC').limit(10)
     @achivement_plays = @user.achivement_plays
     @plays_count = AchivementPlay.where(user_id: @user.id).count
     @achivement_plays_count = @achivement_plays.joins(:play).group(:play_category_id).count
