@@ -2,10 +2,6 @@ a {
   text-decoration: none;
 }
 
-.main {
-  // background: #f8f8f8;
-}
-
 .title-contents {
   height: 90vh;
   width: 100vw;
@@ -107,7 +103,7 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 10vh 0;
+  padding: 20vh 0 10vh 0;
 }
 
 .play-contents>.title {

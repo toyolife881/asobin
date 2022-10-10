@@ -10,8 +10,8 @@
   </div>
   <div class='nav'>
     <ul class='lists-left'>
-      <li><%= link_to 'カテゴリー', "#", class: "category-list" %></li>
-      <li><%= link_to '遊び一覧', "#", class: "play-list" %></li>
+      <li><%= link_to 'ランダム検索', "#", class: "random-search" %></li>
+      <li><%= link_to '遊び一覧', list_plays_path, class: "play-list" %></li>
     </ul>
     <ul class='lists-right'>
       <% if user_signed_in? %>

@@ -1,0 +1,70 @@
+<%= render "shared/header" %>
+<div class='main'>
+  <%# 遊びネタ一覧 %>
+  <div class='play-contents'>
+    <h2 class='title'>遊び一覧</h2>
+    <div class='category-contents'>
+      <ul class='category-lists'>
+        <li><%= link_to '外遊び', outdoor_plays_path, class: "category-list" %></li>
+        <li><%= link_to '室内遊び', indoor_plays_path, class: "category-list" %></li>
+        <li><%= link_to '制作', production_plays_path, class: "category-list" %></li>
+        <li><%= link_to '音楽', music_plays_path, class: "category-list" %></li>
+        <li><%= link_to '本', reading_plays_path, class: "category-list" %></li>
+        <li><%= link_to 'TVゲーム', game_plays_path, class: "category-list" %></li>
+        <li><%= link_to 'スポーツ', sports_plays_path, class: "category-list" %></li>
+        <li><%= link_to '料理', cooking_plays_path, class: "category-list" %></li>
+        <li><%= link_to 'その他', others_plays_path, class: "category-list" %></li>
+      </ul>
+    </div>
+    <ul class='play-lists'>
+      <% if @plays.present? %>
+        <% @plays.each do |play|%>
+          <li class='list'>
+            <%= link_to play_path(play.id) do %>
+              <div class='play-img-content'>
+                <%= image_tag play.image, class: "play-img" %>
+              </div>
+              <div class='play-info'>
+                <h3 class='play-name'>
+                  <%= play.play_name %>
+                </h3>
+                <div class='play-how'>
+                  <%= play.how_to_play.truncate(50) %>
+                </div>
+              </div>
+            <% end %>
+          </li>
+        <% end %>
+      <% else %>
+        <li class='list'>
+          <%= link_to '#' do %>
+            <%= image_tag "pic6.jpg", class: "play-img" %>
+            <div class='play-info'>
+              <h3 class='play-name'>
+                遊びネタを投稿してね！
+              </h3>
+              <div class='play-how'>
+                <% "遊び詳細" %>
+              </div>
+            </div>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  <%# /遊びネタ一覧 %>
+</div>
+<%# 投稿するボタン %>
+<% if user_signed_in? %>
+  <%= link_to(new_play_path, class: 'post-btn_new') do %>
+    <span class='post-btn-text'>投稿する</span>
+    <%= image_tag 'post_btn.png' , size: '185x50' ,class: "post-btn-icon" %>
+  <% end %>
+<% else %>
+  <%= link_to(new_user_session_path, class: 'post-btn_new') do %>
+    <span class='post-btn-text'>投稿する</span>
+    <%= image_tag 'post_btn.png' , size: '185x50' ,class: "post-btn-icon" %>
+  <% end %>
+<% end %>
+<%# 投稿するボタン %>
+<%= render "shared/footer" %>
