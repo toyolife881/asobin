@@ -45,6 +45,47 @@ class PlaysController < ApplicationController
     end
   end
 
+  def list
+    @plays = Play.all.order('created_at DESC')
+  end
+
+  def outdoor
+    @plays = Play.where(play_category_id: 2).order('created_at DESC')
+  end
+
+  def indoor
+    @plays = Play.where(play_category_id: 3).order('created_at DESC')
+  end
+
+  def production
+    @plays = Play.where(play_category_id: 4).order('created_at DESC')
+  end
+
+  def music
+    @plays = Play.where(play_category_id: 5).order('created_at DESC')
+  end
+
+  def reading
+    @plays = Play.where(play_category_id: 6).order('created_at DESC')
+  end
+
+  def game
+    @plays = Play.where(play_category_id: 7).order('created_at DESC')
+  end
+
+  def sports
+    @plays = Play.where(play_category_id: 8).order('created_at DESC')
+  end
+
+  def cooking
+    @plays = Play.where(play_category_id: 9).order('created_at DESC')
+  end
+
+  def others
+    @plays = Play.where(play_category_id: 10).order('created_at DESC')
+  end
+
+
   private
 
   def play_params

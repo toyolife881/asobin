@@ -1,0 +1,26 @@
+.category-contents {
+  margin: 5vh 0;
+}
+
+.category-lists {
+  display: flex;
+}
+
+.category-list {
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  color: black;
+  background-color: #EFEFEE;
+  border-radius: 10px;
+  padding: 8px;
+  margin-right: 3vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.category-list:hover {
+  background-color: #7FDA58;
+  transition: 0.5s;
+}
