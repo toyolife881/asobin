@@ -21,5 +21,10 @@ Rails.application.routes.draw do
       get 'others'
     end
   end
-  resources :users, only: :show
+  resources :users, only: :show do
+    member do
+      get 'posts'
+      get 'favorites'
+    end
+  end
 end

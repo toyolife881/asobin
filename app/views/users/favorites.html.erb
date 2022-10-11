@@ -1,0 +1,33 @@
+<%= render "shared/header" %>
+<div class="user-show">
+  <div class="user-box">
+    <%# お気に入り %>
+    <div class="mypage-user-plays">
+      <h2 class="user-favorite-title">お気に入り</h2>
+      <ul class="play-lists">
+        <% @favorite_plays.each do |favorite_play| %>
+          <li class="list">
+            <%= link_to play_path(favorite_play.play_id) do %>
+              <div class='play-img-content'>
+                <%= image_tag Play.find(favorite_play.play_id).image, class: "play-img" %>
+              </div>
+              <div class='play-info'>
+                <h3 class='play-name'>
+                  <%= Play.find(favorite_play.play_id).play_name %>
+                </h3>
+                <div clas='play-how'>
+                  <%= Play.find(favorite_play.play_id).how_to_play.truncate(50) %>
+                </div>
+              </div>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+      <div class="return-box">
+        <%= link_to "戻る", user_path(current_user.id), class:"return-btn" %>
+      </div>
+    </div>
+    <%# お気に入り %>
+  </div>
+</div>
+<%= render "shared/footer" %>
