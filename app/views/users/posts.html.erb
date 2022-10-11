@@ -1,0 +1,33 @@
+<%= render "shared/header" %>
+<div class="user-show">
+  <div class="user-box">
+    <%# 自分の投稿 %>
+    <div class="mypage-user-plays">
+      <h2 class="user-post-title">自分の投稿</h2>
+      <ul class="play-lists">
+        <% @plays.each do |play| %>
+          <li class="list">
+            <%= link_to play_path(play.id) do %>
+              <div class="play-img-content">
+                <%= image_tag play.image, class:"play-img" %>
+              </div>
+              <div class='play-info'>
+                <h3 class='play-name'>
+                  <%= play.play_name %>
+                </h3>
+                <div class='play-how'>
+                  <%= play.how_to_play.truncate(50) %>
+                </div>
+              </div>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+      <div class="return-box">
+        <%= link_to "戻る", user_path(current_user.id), class:"return-btn" %>
+      </div>
+    </div>
+    <%# 自分の投稿 %>
+  </div>
+</div>
+<%= render "shared/footer" %>

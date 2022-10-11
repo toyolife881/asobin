@@ -61,6 +61,9 @@
           </li>
         <% end %>
       </ul>
+      <div class="more-box">
+        <%= link_to "もっと見る", posts_user_path(current_user.id), class:"more-btn" %>
+      </div>
     </div>
     <%# 自分の投稿 %>
     <%# お気に入り %>
@@ -85,6 +88,9 @@
           </li>
         <% end %>
       </ul>
+      <div class="more-box">
+        <%= link_to "もっと見る", favorites_user_path(current_user.id), class:"more-btn" %>
+      </div>
     </div>
     <%# お気に入り %>
     <%# 実績 %>
