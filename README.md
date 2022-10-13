@@ -49,10 +49,6 @@ https://docs.google.com/spreadsheets/d/1iJLIJy8G3Dso5B524BWwUxrzfq8GY3f8D2vG2KEM
 アプリを利用するためのユーザー情報を管理します。  
 ユーザーの新規登録、ログイン、ログアウトが可能です。  
 
-[![Image from Gyazo](https://i.gyazo.com/2de3d998955ee6544d915619105c2f0f.gif)](https://gyazo.com/2de3d998955ee6544d915619105c2f0f)
-
-[![Image from Gyazo](https://i.gyazo.com/a46ef49795c028d504856332524c962d.gif)](https://gyazo.com/a46ef49795c028d504856332524c962d)
-
 ## ◆投稿機能
 ・概要  
 ユーザーが「遊びネタ」を投稿することができます。
@@ -95,7 +91,8 @@ https://docs.google.com/spreadsheets/d/1iJLIJy8G3Dso5B524BWwUxrzfq8GY3f8D2vG2KEM
 「遊びネタ」の詳細ページにある「遊ぶ」ボタンをクリックすると、遊んだ実績(日付や回数など)を保存することが可能です。  
 尚、保存された実績は、後述のマイページで閲覧が可能です。
 
-[![Image from Gyazo](https://i.gyazo.com/fba6f16e2ea3764ab31935f977cded59.gif)](https://gyazo.com/fba6f16e2ea3764ab31935f977cded59)
+[![Image from Gyazo](https://i.gyazo.com/45554235f91aacaf60315dcc8aba9bd7.jpg)](https://gyazo.com/45554235f91aacaf60315dcc8aba9bd7)
+
 
 ## ◆マイページ機能
 ・概要  
