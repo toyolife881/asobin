@@ -1,72 +1,153 @@
-# テーブル設計
+# アプリケーション名
+ASOBIN (あそびん)
 
-## users テーブル
+# URL
+https://asobin.herokuapp.com/
 
-| Column             | Type       | Options                        |
-| ------------------ | ---------- | ------------------------------ |
-| nickname           | string     | null: false                    |
-| email              | string     | null: false, unique: true      |
-| encrypted_password | string     | null: false                    |
-| last_name          | string     | null: false                    |
-| first_name         | string     | null: false                    |
-| last_name_kana     | string     | null: false                    |
-| first_name_kana    | string     | null: false                    |
-| birth_day          | date       | null: false                    |
-| child_age_id       | integer    |                                |
+# テスト用アカウント
+・Basic認証ID：admin  
+・Basic認証パスワード：2222  
+・メールアドレス：test@test.com  
+・パスワード：aaa111  
+
+# アプリケーション概要
+・「遊びネタ」を投稿、閲覧できる機能  
+・投稿された「遊びネタ」をお気に入り登録できる機能  
+・遊んだ回数(実績)を月別、カテゴリー別に記録し可視化できる実績管理機能
+
+# アプリケーションを制作した背景
+初めてのオリジナルアプリを作成するにあたり、自分自身が生活の中で感じている「悩み」の1つである  
+`「子供との遊びのネタ切れ」`を題材にすることにしました。 
+
+私は普段子供と遊ぶ際に以下のような点で悩むケースが多く、課題に感じていました。
+
+`・自分の得意な(好きな)遊びに偏ってしまい、それ以外の遊び方を子供に提案できない。`  
+`・外に出かける予定だったが、急な雨により室内で遊ぶことになり、遊ぶネタに困ってしまった。`  
+`・自分が子供としっかりと遊べているのか、外遊びや室内遊びなどバランス良く遊べているのか、日々の子育てや仕事に忙殺され、把握できていない。`
+
+前述のアプリケーション概要に記述した3つの機能を実装したアプリを作成することで、上記の悩みを解消できると考え、今回のアプリ作成に至りました。  
+またこの悩みは、同様に子育てをしている多くの人達にも該当する悩みだと思い、このアプリを作成する価値があると考えました。
+
+# ペルソナ
+・性別：男性  
+・年齢：30代  
+・職業：会社員  
+・家族構成：妻、娘(5歳)、息子(1歳)
+
+# ペルソナの課題
+・休日に子供と遊ぶ際、遊びのネタにマンネリ化してきている。  
+・自身がインドア派な為に、子供との遊びがインドアに偏ってしまう。外遊びもしてあげたいが、遊び方が分からない。  
+・他の家庭では子供とどのような遊びをしているのか情報を得たい。  
+・自分が子供と遊ぶ時間を作れているのか、様々な遊びをできているのか、状況を把握したい。
+
+# アプリケーションの要件
+https://docs.google.com/spreadsheets/d/1iJLIJy8G3Dso5B524BWwUxrzfq8GY3f8D2vG2KEM0Bk/edit?usp=sharing
+
+# 利用方法
+## ◆ユーザー管理機能
+・概要  
+アプリを利用するためのユーザー情報を管理します。  
+ユーザーの新規登録、ログイン、ログアウトが可能です。  
+
+[![Image from Gyazo](https://i.gyazo.com/2de3d998955ee6544d915619105c2f0f.gif)](https://gyazo.com/2de3d998955ee6544d915619105c2f0f)
+
+[![Image from Gyazo](https://i.gyazo.com/a46ef49795c028d504856332524c962d.gif)](https://gyazo.com/a46ef49795c028d504856332524c962d)
+
+## ◆投稿機能
+・概要  
+ユーザーが「遊びネタ」を投稿することができます。
+
+・手順  
+1) 投稿ボタンをクリックします。
+[![Image from Gyazo](https://i.gyazo.com/bfffeec1870a92804f26e61f5103c03f.jpg)](https://gyazo.com/bfffeec1870a92804f26e61f5103c03f)
+
+2) 「遊びネタ」の情報を入力し投稿すると、トップページの「新着投稿」に反映されます。
+[![Image from Gyazo](https://i.gyazo.com/90fabb9b008b719a709c3fd002263095.gif)](https://gyazo.com/90fabb9b008b719a709c3fd002263095)
 
 
-### Association
+## ◆一覧表示機能
+・概要  
+投稿された「遊びネタ」が一覧で表示されます。  
+またカテゴリーを選択すると、そのカテゴリーに該当する「遊びネタ」が一覧表示されます。
 
-- has_many :plays
-- has_many :favorite_plays
-- has_many :achivement_plays
-
-
-
-## plays テーブル
-
-| Column             | Type       | Options                        |
-| ------------------ | ---------- | ------------------------------ |
-| play_name          | string     | null: false                    |
-| preparation        | text       | null: false                    |
-| how_to_play        | text       | null: false                    |
-| play_category_id   | integer    | null: false                    |
-| target_age_id      | integer    | null: false                    |
-| estimated_time_id  | integer    |                     |
-| user               | references | null: false, foreign_key: true |
+[![Image from Gyazo](https://i.gyazo.com/378f5ed1125d86c3dcb21d71e327ab43.gif)](https://gyazo.com/378f5ed1125d86c3dcb21d71e327ab43)
 
 
-### Association
+## ◆詳細表示機能
+・概要  
+一覧表示された「遊びネタ」をクリックすると、「遊びネタ」の詳細ページが表示されます。  
+尚、自身が投稿した「遊びネタ」の場合、「編集」「削除」ボタンが表示され、そこから「遊びネタ」の編集や削除が可能です。
 
-- belongs_to :user
+[![Image from Gyazo](https://i.gyazo.com/e8f64e831b7112a02423dcf459e25498.gif)](https://gyazo.com/e8f64e831b7112a02423dcf459e25498)
+
+[![Image from Gyazo](https://i.gyazo.com/f58cfce8511655fafcf74679e3c8d23d.png)](https://gyazo.com/f58cfce8511655fafcf74679e3c8d23d)
+
+## ◆お気に入り機能
+・概要  
+「遊びネタ」の詳細ページにある「お気に入り登録する」ボタンをクリックすると、お気に入り保存することが可能です。  
+`※「お気に入り登録する」ボタンは、自分以外のユーザーが投稿した「遊びネタ」詳細ページのみ表示されます。`  
+尚、お気に入り保存された「遊びネタ」は、後述のマイページで閲覧が可能です。
+
+[![Image from Gyazo](https://i.gyazo.com/edd5190e3a006741a095dece3f943488.gif)](https://gyazo.com/edd5190e3a006741a095dece3f943488)
+
+## ◆実績管理機能
+・概要
+「遊びネタ」の詳細ページにある「遊ぶ」ボタンをクリックすると、遊んだ実績(日付や回数など)を保存することが可能です。  
+尚、保存された実績は、後述のマイページで閲覧が可能です。
+
+[![Image from Gyazo](https://i.gyazo.com/fba6f16e2ea3764ab31935f977cded59.gif)](https://gyazo.com/fba6f16e2ea3764ab31935f977cded59)
+
+## ◆マイページ機能
+・概要  
+自身のマイページが表示されます。
+マイページでは以下の情報を閲覧することが可能です。
+
+`1.ユーザー情報`  
+ユーザーの登録情報(ニックネーム、メールアドレス、お名前、生年月日、お子様の年齢)を閲覧できます。  
+`2.自分の投稿`  
+これまでに自分が投稿した「遊びネタ」を閲覧できます。  
+`3.お気に入り`  
+これまでに自分がお気に入り保存した「遊びネタ」を閲覧できます。  
+`4.遊び実績`  
+これまでに自分がが遊んだ実績を閲覧できます。  
+
+[![Image from Gyazo](https://i.gyazo.com/ea7801c4cdd40bb14f417ce625118dc0.gif)](https://gyazo.com/ea7801c4cdd40bb14f417ce625118dc0)
 
 
+### <<遊び実績の表示について>>
 
-## favorite_plays テーブル
+・直近半年間の月別の遊び実績を、リストで表示します。
+[![Image from Gyazo](https://i.gyazo.com/84bece4f930f29976ce941c8fe82efa1.gif)](https://gyazo.com/84bece4f930f29976ce941c8fe82efa1)
 
-| Column             | Type       | Options                        |
-| ------------------ | ---------- | ------------------------------ |
-| user               | references | null: false, foreign_key: true |
-| play               | references | null: false, foreign_key: true |
+・直近半年間の月別の遊び回数を、棒グラフで表示します。
+[![Image from Gyazo](https://i.gyazo.com/d90828c3d73464ae42b837f932b40045.png)](https://gyazo.com/d90828c3d73464ae42b837f932b40045)
 
-
-### Association
-
-- belongs_to :user
-- belongs_to :play
+・累計のカテゴリー別の遊び回数を、レーダーチャートで表示します。
+[![Image from Gyazo](https://i.gyazo.com/7acf2cb5dcf05f884899007ffd6c16d8.png)](https://gyazo.com/7acf2cb5dcf05f884899007ffd6c16d8)
 
 
+# 実装予定の機能
+## ◆ランダム表示機能
+・概要  
+これまでに投稿された「遊びネタ」の中から、ランダムで抽出し表示させる機能です。
 
-## achivement_play テーブル
+## ◆キーワード検索機能
+・概要  
+これまでに投稿された「遊びネタ」をキーワードで検索できる機能です。
 
- Column             | Type       | Options                        |
-| ------------------ | ---------- | ------------------------------ |
-| user               | references | null: false, foreign_key: true |
-| play               | references | null: false, foreign_key: true |
+## ◆ユーザー情報編集・削除機能
+・概要  
+ユーザー情報(ニックネーム、メールアドレス、お名前、生年月日、お子様の年齢)を編集できる機能です。
+また併せて削除できる機能も実装予定です。
 
+# データベース設計
+[![Image from Gyazo](https://i.gyazo.com/34e05e7487d342e376282aff1be99f52.png)](https://gyazo.com/34e05e7487d342e376282aff1be99f52)
 
-### Association
+# 画面遷移図
+[![Image from Gyazo](https://i.gyazo.com/a51909a16d825e99e81ffa7ff38f0d52.png)](https://gyazo.com/a51909a16d825e99e81ffa7ff38f0d52)
 
-- belongs_to :user
-- belongs_to :play
-
+# 開発環境
+・言語  
+HTML / CSS / Ruby / Ruby on Rails / JavaScript  
+・サービス  
+Heroku / GitHub / AWS
