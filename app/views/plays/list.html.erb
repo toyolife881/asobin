@@ -56,12 +56,12 @@
 </div>
 <%# 投稿するボタン %>
 <% if user_signed_in? %>
-  <%= link_to(new_play_path, class: 'post-btn_new') do %>
+  <%= link_to(new_play_path, class: 'post-btn-new') do %>
     <span class='post-btn-text'>投稿する</span>
     <%= image_tag 'post_btn.png' , size: '185x50' ,class: "post-btn-icon" %>
   <% end %>
 <% else %>
-  <%= link_to(new_user_session_path, class: 'post-btn_new') do %>
+  <%= link_to(new_user_session_path, class: 'post-btn-new') do %>
     <span class='post-btn-text'>投稿する</span>
     <%= image_tag 'post_btn.png' , size: '185x50' ,class: "post-btn-icon" %>
   <% end %>
