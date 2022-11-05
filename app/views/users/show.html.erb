@@ -152,8 +152,8 @@
       <div class="radar-chart-area">
         <canvas id="myChart"></canvas>
         <script>
-          var ctx = document.getElementById("myChart");
-          var myChart = new Chart(ctx, {
+          const ctx = document.getElementById("myChart");
+          const myChart = new Chart(ctx, {
            type: 'radar',
            data: {
             labels: ["外遊び", "室内遊び", "制作", "音楽", "本", "TVゲーム", "スポーツ", "料理", "その他"],
