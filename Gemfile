@@ -71,3 +71,4 @@ gem 'groupdate'
 gem 'chart-js-rails', '~> 0.1.4'
 
 gem "aws-sdk-s3", require: false
+
