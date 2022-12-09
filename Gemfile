@@ -78,5 +78,5 @@ gem 'chart-js-rails', '~> 0.1.4'
 gem "aws-sdk-s3", require: false
 
 group :production do
-  gem 'unicorn', '5.4.1'
+  gem 'pg'
 end
