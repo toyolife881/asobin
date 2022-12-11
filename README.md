@@ -2,12 +2,12 @@
 ASOBIN (あそびん)
 
 # URL
-https://asobin.herokuapp.com/
+https://asobin22.herokuapp.com/
 
 # テスト用アカウント
 ・Basic認証ID：admin  
 ・Basic認証パスワード：2222  
-・メールアドレス：test@test.com  
+・メールアドレス：test1@test.com  
 ・パスワード：aaa111  
 
 # アプリケーション概要
