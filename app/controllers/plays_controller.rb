@@ -85,6 +85,10 @@ class PlaysController < ApplicationController
     @plays = Play.where(play_category_id: 10).order('created_at DESC')
   end
 
+  def random
+    
+  end
+
 
   private
 
