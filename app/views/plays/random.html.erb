@@ -1,3 +1,57 @@
 <%= render "shared/header" %>
-
+<div class='main'>
+  <%# ランダム検索 %>
+  <div class='play-contents'>
+    <h2 class='title'>ランダム検索</h2>
+    <ul class='play-lists'>
+      <% if @plays_random.present? %>
+        <% @plays_random.each do |play|%>
+          <li class='list'>
+            <%= link_to play_path(play.id) do %>
+              <div class='play-img-content'>
+                <%= image_tag play.image, class: "play-img" %>
+              </div>
+              <div class='play-info'>
+                <h3 class='play-name'>
+                  <%= play.play_name %>
+                </h3>
+                <div class='play-how'>
+                  <%= play.how_to_play.truncate(50) %>
+                </div>
+              </div>
+            <% end %>
+          </li>
+        <% end %>
+      <% else %>
+        <li class='list'>
+          <%= link_to '#' do %>
+            <%= image_tag "pic6.jpg", class: "play-img" %>
+            <div class='play-info'>
+              <h3 class='play-name'>
+                遊びネタを投稿してね！
+              </h3>
+              <div class='play-how'>
+                <% "遊び詳細" %>
+              </div>
+            </div>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  <%# /ランダム検索 %>
+</div>
+<%# 投稿するボタン %>
+<% if user_signed_in? %>
+  <%= link_to(new_play_path, class: 'post-btn-new') do %>
+    <span class='post-btn-text'>投稿する</span>
+    <%= image_tag 'post_btn.png' , size: '185x50' ,class: "post-btn-icon" %>
+  <% end %>
+<% else %>
+  <%= link_to(new_user_session_path, class: 'post-btn-new') do %>
+    <span class='post-btn-text'>投稿する</span>
+    <%= image_tag 'post_btn.png' , size: '185x50' ,class: "post-btn-icon" %>
+  <% end %>
+<% end %>
+<%# 投稿するボタン %>
 <%= render "shared/footer" %>
