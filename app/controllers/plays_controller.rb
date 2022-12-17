@@ -86,7 +86,7 @@ class PlaysController < ApplicationController
   end
 
   def random
-    
+    @plays_random = Play.all.sample(5)
   end
 
 
